@@ -2,11 +2,15 @@ package com.ripsxt.cadastro.Missoes;
 
 import com.ripsxt.cadastro.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MissoesModel {
 
     @Id
@@ -19,28 +23,4 @@ public class MissoesModel {
     //uma missao pode ter varios ninjas
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninjaModel;
-
-    public MissoesModel() {
-    }
-
-    public MissoesModel(String nome, String dificuldade) {
-        this.nome = nome;
-        this.dificuldade = dificuldade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getDificuldade() {
-        return dificuldade;
-    }
-
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
-    }
 }
