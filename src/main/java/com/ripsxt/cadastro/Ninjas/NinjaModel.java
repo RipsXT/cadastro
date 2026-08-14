@@ -1,10 +1,11 @@
-package com.ripsxt.cadastro;
+package com.ripsxt.cadastro.Ninjas;
 
+import com.ripsxt.cadastro.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
-//Entity - Transforma um classe em uma entidade em um banco de dados
+//Transforma um classe em uma entidade em um banco de dados
 @Entity
-//Table - Cria a tablela em banco de dados
+//Cria a tablela em banco de dados
 @Table(name = "tb_cadastro")
 public class NinjaModel {
 
@@ -15,6 +16,11 @@ public class NinjaModel {
     private String nome;
     private String email;
     private int idade;
+
+    //Um Ninja tem uma unica missao
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") //Foreing Key ou chave estrangeira
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }

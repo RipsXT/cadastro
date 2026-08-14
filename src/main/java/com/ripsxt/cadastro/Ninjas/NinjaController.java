@@ -1,4 +1,4 @@
-package com.ripsxt.cadastro;
+package com.ripsxt.cadastro.Ninjas;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
